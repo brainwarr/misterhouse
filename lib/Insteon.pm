@@ -236,7 +236,7 @@ sub generate_voice_commands
         next unless $object->isa('Insteon::BaseInterface') or $object->isa('Insteon::BaseObject');
         my $object_name = $object->get_object_name;
         # ignore the thermostat
-        next if $object->isa('Insteon_Thermostat');
+        next if $object->isa('Insteon::Thermostat::Adapter');
         my $command = $object_name;
         $command =~ s/^\$//;
         $command =~ tr/_/ /;
